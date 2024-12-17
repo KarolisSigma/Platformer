@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
 
     private int health;
     private AudioSource audioSource;
+    public bool isPlayer;
 
     void Start()
     {
@@ -35,10 +36,17 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            onDeath.Invoke();
+            if(isPlayer){
+                onDeath.Invoke();
+            }
+            else{
+                Destroy(gameObject);
+            }
         }
 
-        UpdateHearts();
+        if(isPlayer){
+            UpdateHearts();
+        }
 
        //TODO: death event or reload
     }

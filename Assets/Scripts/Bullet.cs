@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        //if(other.gameObject.CompareTag("Player")) return;
+        if(other.gameObject.CompareTag("Player")) return;
         
         //TODO: get health component
         var damage = Random.Range(damageRange.x, damageRange.y);

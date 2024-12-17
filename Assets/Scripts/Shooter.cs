@@ -32,7 +32,7 @@ public class Shooter : MonoBehaviour
             mousePos.z = 0;
             var direction = (mousePos - transform.position).normalized;
 
-            var bullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity).GetComponent<Bullet>();
+            var bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation).GetComponent<Bullet>();
             bullet.direction = direction;
         }
     }

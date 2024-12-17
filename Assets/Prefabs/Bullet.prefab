@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3652701192370768328}
   - component: {fileID: 867673641429743910}
   - component: {fileID: 5794740753188861007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8f10a03db22c14b258a49025b5fcbf3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4a1e787dfafc024d84ec2af9d4a48d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5f2efce1d20422cb0dd55a61fb0e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 2863199494889318863, guid: c7436cdf76c6349ebae72980c9d9b4b2, type: 3}
+  particles: {fileID: 6442340090092777176, guid: afbce4876f0b8714798a84100904f669, type: 3}
   direction: {x: 1, y: 0}
   speed: 20
+  lifeTime: 2
   damageRange: {x: 1, y: 2}
 --- !u!50 &867673641429743910
 Rigidbody2D:

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
-    private int coins;
-
+    public int coins;
+    public AudioSource audioSource;
     public TextMeshProUGUI coinsTxt;
 
     void Start(){
@@ -16,5 +16,6 @@ public class CoinManager : MonoBehaviour
     public void AddCoin(){
         coins++;
         coinsTxt.text = coins.ToString();
+        audioSource.Play();
     }
 }

@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.y<-10){
+            Die();
+        }
+
         horizontal = Input.GetAxisRaw("Horizontal");
         
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, radius, groundMask);

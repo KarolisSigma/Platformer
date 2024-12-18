@@ -8,6 +8,10 @@ public class Slimeball : MonoBehaviour
     public float speed;
     public Vector3 direction;
 
+    void Start(){
+        Destroy(gameObject, 10f);
+    }
+
     void Update()
     {
         transform.position +=  direction*speed*Time.deltaTime;

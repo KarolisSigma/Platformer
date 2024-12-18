@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player");
         flipped=false;
         attacking=false;
         spriteRenderer=GetComponent<SpriteRenderer>();

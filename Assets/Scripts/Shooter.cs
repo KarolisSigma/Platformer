@@ -7,6 +7,7 @@ public class Shooter : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shootPoint;
     public AudioClip shootSound;
+    public AudioClip emptyshotSound;
 
     public float coolDown = 0.5f;
 
@@ -23,17 +24,23 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && Time.time - lastShotTime > coolDown)
+        if(Input.GetMouseButtonDown(0))
         {
-            lastShotTime = Time.time;
-            
-            audioSource.PlayOneShot(shootSound);
-            var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            var direction = (mousePos - transform.position).normalized;
+            if(Time.time - lastShotTime > coolDown){
+                lastShotTime = Time.time;
+                
+                audioSource.PlayOneShot(shootSound);
+                var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+                mousePos.z = 0;
+                var direction = (mousePos - transform.position).normalized;
 
-            var bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation).GetComponent<Bullet>();
-            bullet.direction = direction;
+                var bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation).GetComponent<Bullet>();
+                bullet.direction = direction;
+            }
+            else{
+                audioSource.PlayOneShot(emptyshotSound);
+            }
         }
+
     }
 }
